@@ -34,6 +34,8 @@ import { AuthenticationInterceptor } from './authentication-service/authenticati
 import { AuthenticationGuard } from './authentication-service/authentication.guard';
 import { AuthenticationServiceService } from './authentication-service/authentication-service.service';
 import { AdminRoleGuard } from './authentication-service/admin-role.guard';
+import { UserFriendsListComponent } from './user-friends-list/user-friends-list.component';
+import { FriendListComponent } from './friend-list/friend-list.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { AdminRoleGuard } from './authentication-service/admin-role.guard';
     UserListComponent,
     LoginFormComponent,
     RegistrationFormComponent,
+    UserFriendsListComponent,
+    FriendListComponent,
   ],
   imports: [
     BrowserModule,

@@ -48,4 +48,9 @@ public class ApplicationUser implements UserDetails {
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<ApplicationUserRole> roles;
 
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    private Set<Friend> friends;
+
 }
