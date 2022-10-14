@@ -1,0 +1,35 @@
+.friends-list-menu {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.friends-list-title {
+  margin-inline-end: auto;
+}
+
+.friend-add-button {
+  margin-block-start: 10px;
+}
+
+.friends-table {
+  width: 100%;
+  border-radius: 2px;
+  border: 1px solid white;
+}
+
+.mat-column-friend-id {
+  max-width: 48px;
+}
+
+.mat-column-first-name {
+  max-width: 128px;
+}
+
+.mat-column-last-name {
+  max-width: 128px;
+}
+
+.mat-column-birthday {
+  max-width: 128px;
+}

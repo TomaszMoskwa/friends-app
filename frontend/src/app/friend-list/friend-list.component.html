@@ -1,11 +1,19 @@
 <mat-card>
-  <mat-card-title>Friends List</mat-card-title>
-  <mat-card-subtitle>This is a list of friends</mat-card-subtitle>
-  <mat-card-content class="sales-list-content">
-    <table mat-table [dataSource]="friends" class="mat-elevation-z2 sales-table">
+<div class="friends-list-menu">
+  <div class="friends-list-title">
+    <mat-card-title>Friends List</mat-card-title>
+    <mat-card-subtitle>This is a list of friends</mat-card-subtitle>
+  </div>
+  <div class="friend-add-button">
+    <button mat-raised-button mat-button [routerLink]="['/friends/add']">Add friend</button>
+  </div>
+</div>
+  <mat-card-content class="friends-list-content">
+
+    <table mat-table [dataSource]="friends" class="mat-elevation-z2 friends-table">
 
       <ng-container matColumnDef="friend-id">
-        <th mat-header-cell *matHeaderCellDef>Friend Id</th>
+        <th mat-header-cell *matHeaderCellDef>Id</th>
         <td mat-cell *matCellDef="let friend">{{friend.friendId}}</td>
       </ng-container>
 
@@ -19,9 +27,9 @@
         <td mat-cell *matCellDef="let friend">{{friend.lastName}}</td>
       </ng-container>
 
-      <ng-container matColumnDef="birthdate">
-        <th mat-header-cell *matHeaderCellDef>Birhdate</th>
-        <td mat-cell *matCellDef="let friend">{{friend.birthdate | date :'yyyy-MM-dd'}}</td>
+      <ng-container matColumnDef="birthday">
+        <th mat-header-cell *matHeaderCellDef>Birthday</th>
+        <td mat-cell *matCellDef="let friend">{{friend.birthday}}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="visibleColumnNames"></tr>

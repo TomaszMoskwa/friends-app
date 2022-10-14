@@ -13,7 +13,7 @@ export class FriendListComponent implements OnInit {
     'friend-id',
     'first-name',
     'last-name',
-    'birthdate'
+    'birthday'
   ]
 
   constructor() { }

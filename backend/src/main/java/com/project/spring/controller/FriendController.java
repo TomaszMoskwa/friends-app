@@ -1,6 +1,7 @@
 package com.project.spring.controller;
 
 import com.project.spring.component.PrincipalComponent;
+import com.project.spring.model.dto.AddFriendRequest;
 import com.project.spring.model.dto.FriendDTO;
 import com.project.spring.service.FriendService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FriendController {
     private final FriendService friendService;
-
     private final PrincipalComponent principalComponent;
 
     @GetMapping()
@@ -32,5 +32,14 @@ public class FriendController {
         log.info("getUserFriends called");
         principalComponent.getUser(principal, userId);
         return friendService.getFriendsList(userId);
+    }
+
+    @PostMapping()
+    @PreAuthorize("isAuthenticated()")
+    public FriendDTO addSale(UsernamePasswordAuthenticationToken principal, @RequestBody AddFriendRequest request) {
+        log.info("addFriend called");
+        principalComponent.getUser(principal, request.getUserId());
+
+        return friendService.addNewFriend(request);
     }
 }
